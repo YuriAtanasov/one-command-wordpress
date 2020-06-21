@@ -3,7 +3,7 @@
 
   Terraform and bash scripts which create sample Wordpress blog with single command.
   
-  The solution consist the following main services:
+  The solution consists of the following main services:
   - Basic VPC
   - EC2 instances
   - Application Load Balancer
