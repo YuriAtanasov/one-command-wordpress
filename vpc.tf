@@ -88,7 +88,7 @@ resource "aws_route" "private-rt" {
 module "gateways" {
   source    = "./modules/nat_gateway"
   subnet_id = module.public-subnet-1.subnet_id
-  vpc_id = module.basic_vpc.vpc_id
+  vpc_id    = module.basic_vpc.vpc_id
 }
 
 
@@ -121,9 +121,9 @@ resource "aws_security_group" "wordpress_sg" {
 
 
   ingress { ### Provide your IP address, uncomment and apply if you need management access to the EC2 machines ###
-    from_port = 22
-    protocol = "tcp"
-    to_port = 22
+    from_port   = 22
+    protocol    = "tcp"
+    to_port     = 22
     cidr_blocks = ["94.155.73.215/32"]
   }
 

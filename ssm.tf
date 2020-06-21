@@ -33,6 +33,6 @@ resource "aws_ssm_parameter" "wordpress_admin_pwd" {
 }
 
 resource "random_string" "wordpress_admin_password" {
-  length = 16
+  length  = 16
   special = false
 }

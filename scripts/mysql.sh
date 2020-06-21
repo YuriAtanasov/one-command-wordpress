@@ -45,7 +45,8 @@ sudo expect ~/secure_mysql.sh
 sudo mysql -e "CREATE DATABASE wordpress;" -p${root_password}
 sudo mysql -e "CREATE USER 'wordpress'@'localhost' IDENTIFIED BY '${wordpress_password}';" -p${root_password}
 sudo mysql -e "GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress'@'localhost' IDENTIFIED BY '${wordpress_password}';" -p${root_password}
-sudo mysql -e "GRANT ALL ON wordpress.* TO wordpress@'${web_ip}' IDENTIFIED BY '${wordpress_password}';" -p${root_password}
+sudo mysql -e "GRANT ALL ON wordpress.* TO wordpress@'${web_ip_1}' IDENTIFIED BY '${wordpress_password}';" -p${root_password}
+sudo mysql -e "GRANT ALL ON wordpress.* TO wordpress@'${web_ip_2}' IDENTIFIED BY '${wordpress_password}';" -p${root_password}
 sudo mysql -e "FLUSH PRIVILEGES;" -p${root_password}
 sudo sed -i "s/.*bind-address.*/#bind-address = 127.0.0.1/" /etc/mysql/mysql.conf.d/mysqld.cnf
 sudo service mysql restart

@@ -1,5 +1,5 @@
 variable "region" {
-  default = "eu-west-1" // Should work in all regions however is tested only in Stockholm and Ireland
+  default = "eu-north-1" // Should work in all regions however is tested only in Stockholm and London
 }
 
 variable "instance_type" {
@@ -8,7 +8,7 @@ variable "instance_type" {
 
 variable "key_name" {
   description = "Already existing EC2 Key pair name used for SSH"
-  default = ""
+  default     = "km"
 }
 
 ### VPC

@@ -21,3 +21,4 @@ The solution consist the following main services:
 - **Destroy Terraform < terraform destroy --auto-approve >**
 
 P.S.: If you want management access to the instances, fill the variable 'key_name'
+
