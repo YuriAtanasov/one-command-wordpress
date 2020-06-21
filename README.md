@@ -9,10 +9,14 @@
   - Application Load Balancer
   - SSM Parameter Store parameters
 
+---
+
 2. Prerequisites
 
 * You need to be authenticated against AWS and to have the needed IAM permissions
 * Terraform binary installed (v0.12 version)
+
+---
 
 3. Steps to deploy the solution:
 
@@ -21,15 +25,26 @@
 - Initialize Terraform < terraform init >
 - **Apply Terraform < terraform apply --auto-approve >**
 
+---
+
 4. Steps to destroy the solution:
 
 - **Destroy Terraform < terraform destroy --auto-approve >** 
 
-Note: sometimes the log group is not deleted due to bug in provider - check and delete manually if needed.
+Note: sometimes the CW log group is not deleted due to bug in provider - check and delete manually if needed.
 
-P.S.: If you want management access to the instances, fill the variable 'key_name' and uncomment/apply the ingress rule for 22 port in the SG.
+---
 
- 5 . Future improvements
+5. Management access
+- fill the "key_name" variable
+- add 22 port ingress rule in the wordpress SG
+- apply
+
+Note: you can use the web servers as bastion hosts if you need access to the database.
+
+---
+
+6. Future improvements
 - EFS for the wordpress content
 - Web nodes to be into private subnets
 - Bastion host

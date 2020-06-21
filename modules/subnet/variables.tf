@@ -11,9 +11,9 @@ variable "subnet_cidr" {
   description = "CIDR for the subnet"
 }
 
-/*variable "availability_zone" {
+variable "availability_zone" {
   description = "AZ for the subnet"
-}*/
+}
 
 variable "subnet_name" {
   description = "Name for the subnet used as part of the name tag"

@@ -19,6 +19,7 @@ module "public-subnet-1" {
   subnet_cidr             = "10.189.1.0/24"
   subnet_name             = "public-subnet-1"
   vpc_id                  = module.basic_vpc.vpc_id
+  availability_zone       = "${var.region}a"
 }
 
 module "public-subnet-2" {
@@ -29,6 +30,7 @@ module "public-subnet-2" {
   subnet_cidr             = "10.189.2.0/24"
   subnet_name             = "public-subnet-2"
   vpc_id                  = module.basic_vpc.vpc_id
+  availability_zone       = "${var.region}b"
 }
 
 resource "aws_route_table" "public-rt" {
@@ -57,6 +59,7 @@ module "private-subnet-1" {
   subnet_cidr             = "10.189.3.0/24"
   subnet_name             = "private-subnet-1"
   vpc_id                  = module.basic_vpc.vpc_id
+  availability_zone       = "${var.region}a"
 }
 
 module "private-subnet-2" {
@@ -67,6 +70,7 @@ module "private-subnet-2" {
   subnet_cidr             = "10.189.4.0/24"
   subnet_name             = "private-subnet-1"
   vpc_id                  = module.basic_vpc.vpc_id
+  availability_zone       = "${var.region}b"
 }
 
 resource "aws_route_table" "private-rt" {
@@ -119,13 +123,12 @@ resource "aws_security_group" "wordpress_sg" {
     self      = true
   }
 
-
-  ingress { ### Provide your IP address, uncomment and apply if you need management access to the EC2 machines ###
+  /*  ingress { ### Provide your IP address, uncomment and apply if you need management access to the EC2 machines ###
     from_port   = 22
     protocol    = "tcp"
     to_port     = 22
-    cidr_blocks = ["94.155.73.215/32"]
-  }
+    cidr_blocks = [""]
+  }*/
 
   egress {
     from_port   = 0

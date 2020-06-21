@@ -8,7 +8,7 @@ variable "instance_type" {
 
 variable "key_name" {
   description = "Already existing EC2 Key pair name used for SSH"
-  default     = "km"
+  default     = ""
 }
 
 ### VPC
