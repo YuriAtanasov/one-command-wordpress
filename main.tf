@@ -49,7 +49,7 @@ resource "aws_instance" "mysql_node" {
   instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.wordpress_sg.id]
   subnet_id              = module.private-subnet-1.subnet_id
-  key_name               = "km" // You need to provide already existing key name or create one with aws_key_pair resource
+  key_name               = var.key_name
 
   user_data = data.template_file.mysql_userdata.rendered
 
