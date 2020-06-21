@@ -90,7 +90,7 @@ resource "aws_route" "private-rt" {
 ### IGW & NAT Gateway
 
 module "gateways" {
-  source    = "./modules/nat_gateway"
+  source    = "./modules/gateways"
   subnet_id = module.public-subnet-1.subnet_id
   vpc_id    = module.basic_vpc.vpc_id
 }
